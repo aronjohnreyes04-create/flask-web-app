@@ -1,0 +1,41 @@
+body{
+    font-family: Poppins;
+}
+
+.tickets-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 0;
+    margin: 20px;
+}
+
+.ticket-box {
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 14px 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.ticket-top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.ticket-info p {
+    margin: 5px 0;
+    word-break: break-word;
+}
+
+.ticket-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='adminstyle.css') }}">
+</head>
+<body>
+    <h3>Administrator Portal</h3>
+
+    <p id="sync-status">Live sync active</p>
+
+    
+    <div id="tickets-body" class="tickets-grid">
+        {% for ticket in tickets %}
+        <div class="ticket-box" data-ticket-no="{{ ticket.ticket_no }}">
+            <div class="ticket-top">
+                <strong>Ticket #{{ ticket.ticket_no }}</strong>
+                <span>{{ ticket.status }}</span>
+            </div>
+
+            <div class="ticket-info">
+                <p><strong>Name:</strong> {{ ticket.name }}</p>
+                <p><strong>Contact:</strong> {{ ticket.contact }}</p>
+                <p><strong>Email:</strong> {{ ticket.email }}</p>
+                <p><strong>Address:</strong> {{ ticket.address }}</p>
+                <p><strong>Description:</strong> {{ ticket.incident }}</p>
+            </div>
+
+            <div class="ticket-status">
+                <label>
+                    <input type="checkbox" class="status-checkbox" value="Evaluation"
+                        {% if ticket.status == 'Evaluation' %}checked{% endif %}> Evaluation
+                </label>
+                <label>
+                    <input type="checkbox" class="status-checkbox" value="Processing"
+                        {% if ticket.status == 'Processing' %}checked{% endif %}> Processing
+                </label>
+                <label>
+                    <input type="checkbox" class="status-checkbox" value="Completed"
+                        {% if ticket.status == 'Completed' %}checked{% endif %}> Completed
+                </label>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script src="{{ url_for('static', filename='admin.js') }}"></script>
+</body>
+</html>

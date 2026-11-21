@@ -1,0 +1,331 @@
+body{
+    width: 100%;
+    font-family: Poppins;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 10px;
+    grid-template-areas:
+    "Sidebar Main Hotlines";
+}
+#Menu{
+    grid-area: Sidebar;
+    position: fixed;
+    height: 100vh;
+    width:20%;
+    color: white;
+    background-color:rgb(155, 0, 0);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#Menu #Namecontainer{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+#cancelmenu{
+    display: none;
+}
+#pages{
+    font-family: Poppins;
+    color: white;
+    justify-content: left;
+    list-style-type: none;
+}
+#socmed{
+    position:fixed;
+    bottom: 0;
+}
+
+#pages a{
+    display:block;
+    padding: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+    color: white;
+}
+
+#pages a:hover{
+    background-color: rgb(255, 189, 189);
+    border-radius: 10px 0 0 10px;
+    transform: translateX(10px);
+    color:#720000;
+    
+}
+#pages a:active{
+    background-color: rgb(255, 189, 189);
+    border-radius: 10px 0 0 10px;
+    transform: translateX(10px);
+    color:#720000;
+}
+
+#top{
+    display: none;
+}
+
+#Main{
+    grid-area: Main;
+    padding: 10px;
+    background-color:rgb(255, 255, 255);
+}
+#Main h1{
+    font-family: Poppins;
+    color:#720000;
+}
+
+#Main #about{
+    grid-area: Main;
+    font-family: Poppins;
+    color: white;
+    background: linear-gradient(to right, rgb(255, 65, 65),black);
+    padding: 10px;
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 0.1ch;
+    border-color: rgb(70, 0, 0);
+    box-shadow: 0 0 20px rgb(190, 190, 190);
+}
+
+#Main #Form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 15px;
+    border-radius: 20px;
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: lightgray;
+}
+
+
+#incident{
+    border-color:lightgray;
+}
+#description{
+    height: 100px;
+    border-radius: 20px;
+    font-family: Poppins;
+    font-style: italic;
+    font-size: 15px;
+    padding: 15px;
+    resize:none;
+    border-color:lightgray;
+
+}
+
+#description:focus,
+#name:focus,
+#phone:focus,
+#email:focus,
+#address:focus,
+#incident:focus{
+    outline: solid;
+    outline-color:rgb(255, 65, 65);
+    outline-width: 0.5px;
+}
+#contact{
+    display:flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#contact .incontact{
+    display: flex;
+    flex-direction:column;
+    flex: 1;
+    text-align: left;
+}
+
+
+#contact .incontact .input_box{
+    height: 15px;
+    border-radius: 20px;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: italic;
+    border-width:1px;
+    border-style: solid;
+    padding: 15px;
+    border-color:lightgray;
+}
+
+#contact .incontact label{
+    font-family: Poppins;
+    font-size: 20;
+    margin-bottom: 2px;
+}
+
+.field, 
+#details{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+
+}
+
+.field label{
+    font-family: Poppins;
+    font-size: 20;
+    margin-bottom: 2px;
+}
+
+.field .input_box, #incident{
+    height: 15px;
+    border-radius: 20px;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: italic;
+    border-width:1px;
+    border-style: solid;
+    padding: 15px;
+    border-color:lightgray;
+}
+
+
+#submit{
+    width: 200px;
+    height:50px;  
+    font-family: Poppins Medium;
+    font-style: bold;
+    font-size: 20px;
+    color: rgb(253, 253, 253);
+    border-radius: 15px;
+    border-width: 0.5px;
+    border-color: darkgray;
+    border-style: solid;
+    align-self: center;
+    background-color: rgb(192, 0, 0);
+    padding: 3px;
+}
+#submit:hover{
+    background-color: #720000;
+}
+
+
+
+
+#hotlines{
+    grid-area: Hotlines;
+    background-color:rgb(255, 255, 255);
+    padding: 10px;
+    box-sizing:border-box;
+    font-family: Poppins;
+    border-style:solid;
+    border-color: lightgray;
+    border-width: 0 0 0 1px;
+
+}
+#hlinfo{
+    background: linear-gradient(to right, red, black);
+    border-radius: 20px;
+    padding: 10px;
+    color:white;
+    font-size: 12px;
+    display:flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgb(190, 190, 190);
+}
+
+.hlcontainer{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    background-color:white;
+    margin:10px 0 10px 0;
+    border-radius:20px;
+    padding: 0 10px 0 10px;
+    gap:10px;
+    height:100px;
+    border-style: solid;
+    border-color:lightgray;
+    border-width:1px;
+    overflow: hidden;
+}
+.agency p{
+    font-size: 12px;
+    margin-top: -20px;
+}
+
+.pagecont{
+    display:flex;
+    align-items: center;
+}
+
+#pages #hlbtn{
+    display: none;
+}
+
+@media(max-width:950px){
+    body{
+        display:flex;
+        justify-self: center;
+        flex-direction: column;
+    }
+    #top{
+        display:flex;
+        flex-direction: row;
+        gap: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+        align-items: center;
+        background-color:#000000;
+        color: white;
+        height: 60px;
+        font-family: Poppins;
+        position: sticky;
+        top: 0;
+    }
+    #top i{
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 10px;
+
+    }
+
+    h1{
+    font-family: Poppins Extrabold;
+    font-size: 20px;
+    }
+    #contact{
+        flex-direction: column;
+    }
+
+    #Menu{
+        box-sizing: border-box;
+        width: 50%;
+        display: block;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+        top: 0;
+    }
+    #Menu.active{
+        transform: translateX(0);
+        box-shadow: 0 0 200px black;
+        
+    }
+    #pages #hlbtn{
+    display: flex;
+    }
+
+
+    #Namecontainer{
+        margin-top: -10px;
+    }
+    #cancelmenu{
+    display: flex;
+    }
+
+    #hotlines{
+        display:none;
+    }
+
+    #Main{
+        margin: 0 20px 0 20px;
+    }
+    #Main #about{
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Trequest.css') }}">
+    <script src="https://kit.fontawesome.com/65c92854fd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+     <div id="top">
+        <div id="hamburger">
+        <i class="fa-solid fa-bars" style="color: rgb(255, 255, 255);" ></i> </div>
+        <h3>CSR PORTAL</h3>
+    </div>
+
+    <div id ="Menu">
+        <div id="Namecontainer">
+            <div id="cancelBtn"><div id="cancelmenu" style="color: rgb(255, 255, 255)"><i class="fa-solid fa-xmark"></i> </div></div>
+            <h3>CSR PORTAL</h3>
+        </div>
+
+        <div id="pages">
+            <a href="/form">Form</a>
+            <a href="/trackrequest">Track Request</a>
+            <a href="/hotlines">Hotlines</a>
+            <a href="/login">Admin</a>
+        </div>
+    </div>
+
+    <form method="GET" action="/trackrequest">
+    <input
+        type="text"
+        name="ticket_no"
+        placeholder="Enter Ticket Number"
+        required>
+</form>
+
+    <div id="tickets-body" class="tickets-grid">
+        {% if tickets %}
+        {% for ticket in tickets %}
+        <div class="ticket-box" data-ticket-no="{{ ticket.ticket_no }}">
+            <div class="ticket-top">
+                <strong>{{ ticket.ticket_no }}</strong>
+                <span>{{ ticket.status }}</span>
+            </div>
+            <div class="ticket-status">
+                <label>
+                    <input type="checkbox" class="status-checkbox" value="Evaluation"
+                        {% if ticket.status == 'Evaluation' %}checked{% endif %}> Evaluation
+                </label>
+                <label>
+                    <input type="checkbox" class="status-checkbox" value="Processing"
+                        {% if ticket.status == 'Processing' %}checked{% endif %}> Processing
+                </label>
+                <label>
+                    <input type="checkbox" class="status-checkbox" value="Completed"
+                        {% if ticket.status == 'Completed' %}checked{% endif %}> Completed
+                </label>
+            </div>
+
+            
+        </div>
+        {% endfor %}
+        {% else %} No ticket found {% endif %}
+    </div>
+    
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

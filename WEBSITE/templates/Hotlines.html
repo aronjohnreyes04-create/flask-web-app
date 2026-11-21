@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Hotlines.css') }}">
+    <script src="https://kit.fontawesome.com/65c92854fd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="top">
+        <div id="hamburger">
+        <i class="fa-solid fa-bars" style="color: rgb(255, 255, 255);" ></i> </div>
+        <h3>CSR PORTAL</h3>
+    </div>
+
+    <div id ="Menu">
+        <div id="Namecontainer">
+            <div id="cancelBtn"><div id="cancelmenu" style="color: rgb(255, 255, 255)"><i class="fa-solid fa-xmark"></i> </div></div>
+            <h3>CSR PORTAL</h3>
+        </div>
+
+        <div id="pages">
+            <a href="/form" id="Form">Form</a>
+            <a href="/trackrequest">Track Request</a>
+            <a href="/hotlines">Hotlines</a>
+            <a href="/sign">Admin</a>
+        </div>
+    </div>
+    <div id="hotlines">
+        <h2>Emergency Hotlines</h2>
+        <div id="hlinfo">
+            <p>You can also call these emergency directly to get immediate help during accidents, crimes, medical crises, or natural disasters.</p>
+        </div>
+        
+        <div class="hlcontainer">
+            <img src="{{ url_for('static', filename='images/PDRRMO.png') }}" height="70">
+            <div class="agency">
+            <h3>PDRRMO</h3>
+            <p>911<br>0917-150-5754<br>0998-584-6867</p>
+            </div>
+        </div>
+        <div class="hlcontainer">
+            <img src="{{ url_for('static', filename='images/PNP.png') }}" height="70">
+            <div class="agency">
+            <h3>PNP Lingayen</h3>
+            <p>0916-562-5353<br>0998-598-5109</p>
+            </div>
+        </div>
+        <div class="hlcontainer">
+            <img src="{{ url_for('static', filename='images/MSWDO.png') }}" height="70">
+             <div class="agency">
+            <h3>MSWDO Lingayen</h3>
+            <p>(075) 633-7991</p>
+            </div>
+        </div>
+        <div class="hlcontainer">
+            <img src="{{ url_for('static', filename='images/LDH.png') }}" height="70">
+            <div class="agency">
+            <h3>Lingayen District Hospital</h3>
+            <p>(075) 542-22295<br>0943-077-4072</p>
+            </div>
+        </div>
+        <div class="hlcontainer">
+            <img src="{{ url_for('static', filename='images/LDRRMO.png') }}" height="70">
+            <div class="agency">
+            <h3>LDDRRMO</h3>
+            <p>(075) 653-7515<br>0919-099-2230</p>
+            </div>
+        </div>
+        <div class="hlcontainer">
+            <img src="{{ url_for('static', filename='images/BFP.png') }}" height="70">
+            <div class="agency">
+            <h3>BFP Lingayen</h3>
+            <p>(075) 542-7080<br>0917-186-1611</p>
+            </div>
+        </div>
+        <div class="hlcontainer">
+            <img src="{{ url_for('static', filename='images/CENPELCO.png') }}" height="70">
+            <div class="agency">
+            <h3>CENPELCO</h3>
+            <p>(075) 529-5179<br>0916-584-7423<br>0921-525-7718</p>
+            </div>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='main.js')}}"></script>
+</body>
+</html>
